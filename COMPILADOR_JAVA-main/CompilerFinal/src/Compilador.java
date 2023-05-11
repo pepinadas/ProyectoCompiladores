@@ -243,6 +243,16 @@ public class Compilador extends javax.swing.JFrame {
                 jButton5ActionPerformed(evt); //Llama al método jButton5ActionPerformed que maneja el evento de hacer clic en el botón "jButton5".
             }
         });
+        
+        /**
+            Este código está utilizando el API de Java Swing para crear un diseño de interfaz gráfica de usuario. 
+            La primera línea declara e inicializa un objeto GroupLayout con el panelButtonCompilerExecute como argumento. 
+            La segunda línea establece este objeto GroupLayout como el layout manager del panelButtonCompilerExecute.
+            Las líneas siguientes establecen la estructura horizontal del GroupLayout, que consta de una serie de componentes de botón de JButton, cada uno separado por un espacio vertical. 
+            La estructura horizontal se define usando la clase javax.swing.GroupLayout y utiliza el método group para agrupar componentes y establecer sus propiedades de alineación. 
+            Cada botón tiene una preferencia de tamaño establecida mediante el método setPreferredSize. 
+            Finalmente, se establece un botón btnEjecutar como el botón de ejecución con el método setExecuteButton, que toma un objeto JButton como argumento.
+        */
 
         javax.swing.GroupLayout panelButtonCompilerExecuteLayout = new javax.swing.GroupLayout(panelButtonCompilerExecute);
         panelButtonCompilerExecute.setLayout(panelButtonCompilerExecuteLayout);
@@ -268,6 +278,15 @@ public class Compilador extends javax.swing.JFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(btnEjecutar, javax.swing.GroupLayout.PREFERRED_SIZE, 16, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
+        
+        /**
+            Este bloque de código establece la estructura vertical del objeto GroupLayout. 
+            La estructura vertical consiste en una sola fila que contiene todos los componentes de botón de la estructura horizontal. 
+            El método setVerticalGroup toma un objeto Group que define la estructura vertical del GroupLayout.
+            Dentro del objeto Group, se utiliza el método group para agrupar los componentes de botón y establecer sus propiedades de alineación. 
+            Todos los componentes se colocan en la misma fila usando el argumento Alignment.BASELINE en el método group. 
+            La llamada al método setVerticalGroup también define el tamaño preferido de la fila a través del método setPreferredSize, lo que garantiza que los componentes se ajusten adecuadamente en la ventana de la aplicación.
+        */
         panelButtonCompilerExecuteLayout.setVerticalGroup(
             panelButtonCompilerExecuteLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(panelButtonCompilerExecuteLayout.createSequentialGroup()
@@ -284,12 +303,26 @@ public class Compilador extends javax.swing.JFrame {
                     .addComponent(jButton5))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
+        
+        /**
+            La primera línea establece que el JTextArea no se puede editar mediante el método setEditable(false), lo que significa que el usuario no puede modificar el texto dentro de la JTextArea.
+            La segunda línea establece el número de columnas en la JTextArea mediante el método setColumns(20). En este caso, se establece un ancho predeterminado de 20 columnas.
+            La tercera línea establece el número de filas en la JTextArea mediante el método setRows(5). En este caso, se establece una altura predeterminada de 5 filas.
+            La última línea crea un componente de JScrollPane y lo asigna a la JTextArea utilizando el método setViewportView. 
+            Esto permite que el usuario desplace la JTextArea si se produce una salida de consola que excede el tamaño de la JTextArea. 
+            El contenido de la JTextArea se muestra en el JScrollPane gracias al método setViewportView.
+        */
 
         jtaOutputConsole.setEditable(false);
         jtaOutputConsole.setColumns(20);
         jtaOutputConsole.setRows(5);
         jScrollPane2.setViewportView(jtaOutputConsole);
-
+        
+        /** Este código continua el código anterior y establece el modelo de datos de la tabla con un array de String que contiene los nombres de las columnas de la tabla. 
+            Además, se define una clase anónima que extiende DefaultTableModel para personalizar el comportamiento de la tabla. 
+            Esta clase anónima define un array de booleanos que indica si cada celda de la tabla es editable o no. En este caso, 
+            todas las celdas se establecen como no editables.
+        */
         tblTokens.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
 
@@ -306,15 +339,24 @@ public class Compilador extends javax.swing.JFrame {
                 return canEdit [columnIndex];
             }
         });
-        tblTokens.getTableHeader().setReorderingAllowed(false);
-        jScrollPane3.setViewportView(tblTokens);
+       
+        
+        tblTokens.getTableHeader().setReorderingAllowed(false); //Se deshabilita la capacidad de reordenar las columnas de la tabla tblTokens. Esto significa que las columnas permanecerán en su posición original y no podrán ser arrastradas y reorganizadas por el usuario.
+        jScrollPane3.setViewportView(tblTokens); // Se crea un componente JScrollPane (jScrollPane3) que contiene la tabla tblTokens. Esto permite agregar barras de desplazamiento a la tabla en caso de que el contenido sea más grande que el espacio disponible.
 
-        jPanel1.setBackground(new java.awt.Color(255, 255, 255));
+        jPanel1.setBackground(new java.awt.Color(255, 255, 255)); //Se establece el color de fondo del JPanel jPanel1 en blanco (#FFFFFF).
 
-        jPanel2.setBackground(new java.awt.Color(204, 204, 255));
+        jPanel2.setBackground(new java.awt.Color(204, 204, 255)); // Se establece el color de fondo del JPanel jPanel2 en un tono de azul claro (#CCCCFF).
 
-        jLabel2.setFont(new java.awt.Font("Bauhaus 93", 1, 18)); // NOI18N
-        jLabel2.setText("Compilador - LyA II");
+        jLabel2.setFont(new java.awt.Font("Bauhaus 93", 1, 18)); // NOI18N Se establece la fuente del JLabel jLabel2 como "Bauhaus 93" con negrita y un tamaño de 18 puntos.
+        jLabel2.setText("Compilador - LyA II"); //Se establece el texto del JLabel jLabel2 como "Compilador - LyA II". Este JLabel se utiliza como título de la ventana o título del panel.
+        
+        /** Estas líneas de código se utilizan para definir el diseño (layout) del JPanel `jPanel2` utilizando GroupLayout, un administrador de diseño de contenedores que permite definir la posición y tamaño de los componentes en función de las relaciones entre ellos.
+            La primera línea declara un nuevo objeto GroupLayout para el JPanel `jPanel2`. La segunda línea establece este objeto GroupLayout como el diseño del JPanel `jPanel2` utilizando el método `setLayout()`.
+            Las siguientes líneas de código definen cómo se deben colocar los componentes en el JPanel `jPanel2` utilizando GroupLayout. La llamada al método `setHorizontalGroup()` establece las relaciones horizontales entre los componentes en el JPanel, mientras que la llamada al método `setVerticalGroup()` establece las relaciones verticales.
+            En este caso, la disposición horizontal del JPanel `jPanel2` se establece utilizando el método `addGroup()` para agregar un grupo paralelo que contiene el JLabel `jLabel2`. La disposición vertical del JPanel `jPanel2` se establece utilizando el método `addGroup()` para agregar un grupo secuencial que contiene el JLabel `jLabel2`.
+            En resumen, estas líneas de código definen cómo se debe ubicar y distribuir el JLabel `jLabel2` dentro del JPanel `jPanel2` utilizando el administrador de diseño GroupLayout.
+        */
 
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
@@ -332,6 +374,13 @@ public class Compilador extends javax.swing.JFrame {
                 .addComponent(jLabel2)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
+        
+        /** Estas líneas de código definen la ubicación y tamaño de dos JLabels (`LabelTecNM` y `LabelITT`) dentro del JPanel `jPanel1` utilizando GroupLayout.
+            Las dos primeras líneas de código establecen la imagen de fondo de los JLabels utilizando el método `setIcon()` y cargando la imagen desde un archivo en el paquete Multimedia utilizando el método `getResource()`.
+            Las siguientes líneas de código definen cómo se deben colocar los JLabels dentro del JPanel `jPanel1` utilizando el administrador de diseño GroupLayout. La llamada al método `setHorizontalGroup()` establece las relaciones horizontales entre los componentes en el JPanel, mientras que la llamada al método `setVerticalGroup()` establece las relaciones verticales.
+            En este caso, la disposición horizontal del JPanel `jPanel1` se establece utilizando el método `addGroup()` para agregar tres grupos paralelos: uno que contiene el JLabel `LabelTecNM`, otro que contiene el JPanel `jPanel2`, y otro que contiene el JLabel `LabelITT`. La disposición vertical del JPanel `jPanel1` se establece utilizando el método `addGroup()` para agregar un grupo secuencial que contiene los tres componentes.
+            En resumen, estas líneas de código definen cómo se debe ubicar y distribuir los JLabels `LabelTecNM` y `LabelITT` y el JPanel `jPanel2` dentro del JPanel `jPanel1` utilizando el administrador de diseño GroupLayout.
+        */
 
         LabelTecNM.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Multimedia/Logo TecNM.png"))); // NOI18N
 
@@ -350,16 +399,16 @@ public class Compilador extends javax.swing.JFrame {
                 .addComponent(LabelITT)
                 .addGap(54, 54, 54))
         );
-        jPanel1Layout.setVerticalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGap(35, 35, 35)
-                .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-            .addGroup(jPanel1Layout.createSequentialGroup()
-                .addContainerGap()
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(LabelITT)
-                    .addComponent(LabelTecNM)))
+        jPanel1Layout.setVerticalGroup( //Esto inicia la definición de la disposición vertical del panel jPanel1.
+            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING) //Esto crea un grupo de elementos que se colocarán uno encima del otro en el panel.
+            .addGroup(jPanel1Layout.createSequentialGroup() //Esto define un nuevo grupo secundario dentro del grupo principal para agregar más elementos.
+                .addGap(35, 35, 35) //Esto agrega un espacio en blanco de 35 píxeles entre el borde superior del panel y el primer elemento dentro del grupo.
+                .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)) //Esto agrega el panel jPanel2 al grupo secundario con su tamaño predeterminado.
+            .addGroup(jPanel1Layout.createSequentialGroup() //Esto define otro grupo secundario dentro del grupo principal.
+                .addContainerGap() //Esto agrega un espacio en blanco predeterminado entre los elementos dentro del grupo secundario.
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING) //Esto crea otro grupo secundario para agregar más elementos debajo del grupo principal.
+                    .addComponent(LabelITT) //Esto agrega la etiqueta LabelITT al grupo secundario.
+                    .addComponent(LabelTecNM))) //Esto agrega la etiqueta LabelTecNM al grupo secundario.
         );
 
         jLabel5.setFont(new java.awt.Font("Bauhaus 93", 1, 18)); // NOI18N
