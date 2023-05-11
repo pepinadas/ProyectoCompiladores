@@ -2,6 +2,7 @@
 //que proporciona temas de apariencia plana para aplicaciones de escritorio en Java. 
 //En este caso, se está utilizando el tema "FlatIntelliJLaf" que imita la apariencia de la interfaz de usuario de IntelliJ IDEA.
 import com.formdev.flatlaf.FlatIntelliJLaf;
+//Estas líneas importan varias clases de la biblioteca compilerTools. Cada una de estas clases se utiliza para herramientas específicas relacionadas con la compilación de código en LSSL.
 import compilerTools.CodeBlock;
 import javax.swing.UIManager;
 import javax.swing.UnsupportedLookAndFeelException;
@@ -12,6 +13,8 @@ import compilerTools.Grammar;
 import compilerTools.Production;
 import compilerTools.TextColor;
 import compilerTools.Token;
+//Estas líneas importan varias clases de Java que se utilizan para diferentes propósitos en la aplicación. Por ejemplo, Color se utiliza para definir colores utilizados en la 
+//interfaz de usuario, File se utiliza para interactuar con archivos en el sistema operativo, HashMap y HashSet se utilizan para almacenar datos en colecciones, etc.
 import java.awt.Color;
 import java.awt.Desktop;
 import java.awt.Dimension;
@@ -32,6 +35,10 @@ import java.util.Arrays;
 import java.util.HashMap;
 import java.util.HashSet;
 import java.util.Set;
+//Estas líneas importan varias clases de la biblioteca javax.swing, que se utilizan para construir la interfaz de usuario de la aplicación. 
+//JOptionPane se utiliza para mostrar ventanas emergentes con mensajes, JScrollPane se utiliza para proporcionar barras de desplazamiento
+//para áreas de texto grandes y JTextArea se utiliza para mostrar texto en una ventana de texto editable. 
+//Timer se utiliza para realizar tareas repetitivas en un intervalo de tiempo determinado.
 import javax.swing.JOptionPane;
 import javax.swing.JScrollPane;
 import javax.swing.JTextArea;
