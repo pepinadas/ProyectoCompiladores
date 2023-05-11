@@ -206,41 +206,41 @@ public class Compilador extends javax.swing.JFrame {
             }
         });
 
-        btnTripletas.setText("Tripletas");
-        btnTripletas.setEnabled(false);
-        btnTripletas.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnTripletasActionPerformed(evt);
+        btnTripletas.setText("Tripletas"); // Establece el texto del botón "btnTripletas" como "Tripletas".
+        btnTripletas.setEnabled(false); //Deshabilita el botón "btnTripletas".
+        btnTripletas.addActionListener(new java.awt.event.ActionListener() { //Agrega un escucha de evento para el botón "btnTripletas" que implementa la interfaz ActionListener.
+            public void actionPerformed(java.awt.event.ActionEvent evt) { //Define el método actionPerformed que se ejecutará cuando se presione el botón "btnTripletas".
+                btnTripletasActionPerformed(evt); //Llama al método btnTripletasActionPerformed que maneja el evento de hacer clic en el botón "btnTripletas".
             }
         });
 
-        jButton3.setText("CodObj,");
-        jButton3.setEnabled(false);
-        jButton3.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton3ActionPerformed(evt);
+        jButton3.setText("CodObj,"); //Establece el texto del botón "jButton3" como "CodObj,".
+        jButton3.setEnabled(false); //Deshabilita el botón "jButton3".
+        jButton3.addActionListener(new java.awt.event.ActionListener() { // Agrega un escucha de evento para el botón "jButton3" que implementa la interfaz ActionListener.
+            public void actionPerformed(java.awt.event.ActionEvent evt) { //Define el método actionPerformed que se ejecutará cuando se presione el botón "jButton3".
+                jButton3ActionPerformed(evt); //Llama al método jButton3ActionPerformed que maneja el evento de hacer clic en el botón "jButton3".
             }
         });
 
-        jButton4.setText("Ensamblador");
-        jButton4.setEnabled(false);
-        jButton4.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton4ActionPerformed(evt);
+        jButton4.setText("Ensamblador"); //Establece el texto del botón "jButton4" como "Ensamblador".
+        jButton4.setEnabled(false); // Deshabilita el botón "jButton4".
+        jButton4.addActionListener(new java.awt.event.ActionListener() { //Agrega un escucha de evento para el botón "jButton4" que implementa la interfaz ActionListener.
+            public void actionPerformed(java.awt.event.ActionEvent evt) { //Define el método actionPerformed que se ejecutará cuando se presione el botón "jButton4".
+                jButton4ActionPerformed(evt);// Llama al método jButton4ActionPerformed que maneja el evento de hacer clic en el botón "jButton4".
             }
         });
 
-        btnEjecutar.setText("Ejecutar");
-        btnEjecutar.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnEjecutarActionPerformed(evt);
+        btnEjecutar.setText("Ejecutar"); //Establece el texto del botón "btnEjecutar" como "Ejecutar".
+        btnEjecutar.addActionListener(new java.awt.event.ActionListener() { //Agrega un escucha de evento para el botón "btnEjecutar" que implementa la interfaz ActionListener.
+            public void actionPerformed(java.awt.event.ActionEvent evt) { //Define el método actionPerformed que se ejecutará cuando se presione el botón "btnEjecutar".
+                btnEjecutarActionPerformed(evt); //Llama al método btnEjecutarActionPerformed que maneja el evento de hacer clic en el botón "btnEjecutar".
             }
         });
 
-        jButton5.setText("Optimizar");
-        jButton5.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton5ActionPerformed(evt);
+        jButton5.setText("Optimizar"); //Establece el texto del botón "jButton5" como "Optimizar".
+        jButton5.addActionListener(new java.awt.event.ActionListener() { //Agrega un escucha de evento para el botón "jButton5" que implementa la interfaz ActionListener.
+            public void actionPerformed(java.awt.event.ActionEvent evt) { //Define el método actionPerformed que se ejecutará cuando se presione el botón "jButton5".
+                jButton5ActionPerformed(evt); //Llama al método jButton5ActionPerformed que maneja el evento de hacer clic en el botón "jButton5".
             }
         });
 
