@@ -455,14 +455,14 @@ public class Compilador extends javax.swing.JFrame {
                 .addGap(22, 22, 22)) // Agrega un espacio en blanco después de los componentes secundarios
         );
 
-        getContentPane().add(rootPanel);
+        getContentPane().add(rootPanel); //// Agrega el panel principal a la ventana
 
-        pack();
+        pack(); //// Ajusta el tamaño de la ventana para que se ajuste a los componentes que contiene el panel principal
     }// </editor-fold>//GEN-END:initComponents
 
-    private void btnCompilarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCompilarActionPerformed
-        directorio.New();
-        clearFields();
+    private void btnCompilarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCompilarActionPerformed // Define un método de acción que se ejecuta cuando se hace clic en el botón "btnCompilar"
+        directorio.New(); // Crea un nuevo directorio
+        clearFields(); // Limpia los campos de entrada de texto y el área de texto de salida
     }//GEN-LAST:event_btnCompilarActionPerformed
 
     private void btnEjecutarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEjecutarActionPerformed
