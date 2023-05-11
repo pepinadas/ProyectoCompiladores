@@ -48,38 +48,40 @@ import javax.swing.Timer;
  *
  * @author marco
  */
+// Este código es una clase llamada "Compilador", que extiende de la clase 
+// "javax.swing.JFrame", lo que significa que es una ventana de la interfaz gráfica de usuario. 
 public class Compilador extends javax.swing.JFrame {
 
-    private String title,ensamblador;
-    private Directory directorio;
+    private String title,ensamblador; //"title" (título de la ventana), "ensamblador" (nombre del archivo ensamblador)
+    private Directory directorio; //"directorio" (directorio de trabajo)
     private String codigoIntermedio;
     private String codigoOptimizado;
-    private ArrayList<Token> tokens;
-    private ArrayList<ErrorLSSL> errors;
-    private ArrayList<TextColor> textsColor;
-    private Timer timerKeyReleased;
-    private ArrayList<Production> identProd;
-    private ArrayList<Production> ifProd;
-    private ArrayList<Production> whileProd;
-    private ArrayList<String> codObj;
-    private ArrayList<String> codObjComp;
-    private ArrayList<String> variables;
+    private ArrayList<Token> tokens; //"tokens" (una lista de tokens)
+    private ArrayList<ErrorLSSL> errors; //"errors" (una lista de errores de LSSL)
+    private ArrayList<TextColor> textsColor; //"textsColor" (una lista de colores de texto)
+    private Timer timerKeyReleased; //"timerKeyReleased" (un temporizador para cuando se suelta una tecla)
+    private ArrayList<Production> identProd; //"identProd" (una lista de producciones de identificador)
+    private ArrayList<Production> ifProd; //"ifProd" (una lista de producciones de sentencia "if")
+    private ArrayList<Production> whileProd; //"whileProd" (una lista de producciones de sentencia "while")
+    private ArrayList<String> codObj; //"codObj" (una lista de códigos objeto)
+    private ArrayList<String> codObjComp; //"codObjComp" (una lista de códigos objeto compilados)
+    private ArrayList<String> variables; //"variables" (una lista de variables)
     
-    private ArrayList<Production> funcProd;
-    private HashMap<String, String> identificadores;
-    private boolean codeHasBeenCompiled = false;
-    private ArrayList<Production> asigProd;
-    private ArrayList<Production> asigProdConID;
-    private ArrayList<Production> compaProdIzq;
-    private ArrayList<Production> compaProdDer;
-    private ArrayList<Production> compaProdDoble;
-    private ArrayList<Production> operProdIzq;
-    private ArrayList<Production> operProdDer;
-    private ArrayList<Production> operProdDoble;
+    private ArrayList<Production> funcProd; //"funcProd" (una lista de producciones de función)
+    private HashMap<String, String> identificadores; //"identificadores" (un mapa de identificadores)
+    private boolean codeHasBeenCompiled = false; // "codeHasBeenCompiled" (un booleano que indica si el código ha sido compilado)
+    private ArrayList<Production> asigProd; //"asigProd" (una lista de producciones de asignación)
+    private ArrayList<Production> asigProdConID; //"asigProdConID" (una lista de producciones de asignación con identificador)
+    private ArrayList<Production> compaProdIzq; //"compaProdIzq" (una lista de producciones de comparación a la izquierda)
+    private ArrayList<Production> compaProdDer; //"compaProdDer" (una lista de producciones de comparación a la derecha)
+    private ArrayList<Production> compaProdDoble; //"compaProdDoble" (una lista de producciones de comparación doble)
+    private ArrayList<Production> operProdIzq; //"operProdIzq" (una lista de producciones de operación a la izquierda)
+    private ArrayList<Production> operProdDer; //"operProdDer" (una lista de producciones de operación a la derecha)
+    private ArrayList<Production> operProdDoble; //"operProdDoble" (una lista de producciones de operación doble)
     
-    private ArrayList<Production> identProdCopia;
-    private ArrayList<Production> asigProdCopia;
-    ArrayList<ArrayList<Token>> prods = new ArrayList<ArrayList<Token>>(); //para optimización, vienen de 
+    private ArrayList<Production> identProdCopia; //"identProdCopia" (una lista)
+    private ArrayList<Production> asigProdCopia; //"asigProdCopia" (una lista)
+    ArrayList<ArrayList<Token>> prods = new ArrayList<ArrayList<Token>>(); // "prods" (una lista de listas)
 
     
 
@@ -88,55 +90,55 @@ public class Compilador extends javax.swing.JFrame {
      * Creates new form Compilador
      */
     public Compilador() {
-        initComponents();
-        init();
+        initComponents(); // Inicializa los componentes de la interfaz gráfica
+        init(); // Llama al método personalizado para inicializar la clase
     }
 
     private void init() {
-        title = "Compiler";
-        setLocationRelativeTo(null);
-        setTitle(title);
-        directorio = new Directory(this, jtpCode, title, ".comp");
-        addWindowListener(new WindowAdapter() {// Cuando presiona la "X" de la esquina superior derecha
+        title = "Compiler"; // Establece el título de la ventana
+        setLocationRelativeTo(null); // Centra la ventana en la pantalla
+        setTitle(title); // Establece el título de la ventana
+        directorio = new Directory(this, jtpCode, title, ".comp");// Inicializa un objeto de la clase Directorio
+        addWindowListener(new WindowAdapter() { // Añade un listener al evento de cierre de ventana Cuando presiona la "X" de la esquina superior derecha
             @Override
-            public void windowClosing(WindowEvent e) {
-                directorio.Exit();
-                System.exit(0);
+            public void windowClosing(WindowEvent e) { // Al cerrar la ventana
+                directorio.Exit(); // Llama al método Exit() de la clase Directorio
+                System.exit(0); // Finaliza la aplicación
             }
         });
-        Functions.setLineNumberOnJTextComponent(jtpCode);
-        timerKeyReleased = new Timer(300, (ActionEvent e) -> {
-            timerKeyReleased.stop();
-            int posicion = jtpCode.getCaretPosition();
-            jtpCode.setText(jtpCode.getText().replaceAll("[\r]+", ""));
-            jtpCode.setCaretPosition(posicion);
-            colorAnalysis();
+        Functions.setLineNumberOnJTextComponent(jtpCode); // Establece los números de línea en el JTextPane jtpCode
+        timerKeyReleased = new Timer(300, (ActionEvent e) -> { // Inicializa un temporizador para la escritura de código
+            timerKeyReleased.stop(); // Detiene el temporizador
+            int posicion = jtpCode.getCaretPosition(); // Obtiene la posición actual del cursor
+            jtpCode.setText(jtpCode.getText().replaceAll("[\r]+", "")); // Remueve los saltos de línea innecesarios
+            jtpCode.setCaretPosition(posicion); // Establece la posición actual del cursor
+            colorAnalysis(); // Realiza un análisis de color del código
         });
-        Functions.insertAsteriskInName(this, jtpCode, () -> {
-            timerKeyReleased.restart();
+        Functions.insertAsteriskInName(this, jtpCode, () -> { // Agrega un asterisco al título de la ventana si hay cambios sin guardar en el código
+            timerKeyReleased.restart(); // Reinicia el temporizador
         });
-        tokens = new ArrayList<>();
-        errors = new ArrayList<>();
-        textsColor = new ArrayList<>();
-        identProd = new ArrayList<>();
-        ifProd = new ArrayList<>();
-        whileProd = new ArrayList<>();
-        asigProd = new ArrayList<>();
-        asigProdConID = new ArrayList<>();
-        compaProdIzq = new ArrayList<>();
-        compaProdDer = new ArrayList<>();
-        compaProdDoble = new ArrayList<>();
-        operProdIzq = new ArrayList<>();
-        operProdDer = new ArrayList<>();
-        operProdDoble = new ArrayList<>();
-        funcProd = new ArrayList<>();
-        codObj = new ArrayList<>();
-        codObjComp = new ArrayList<>();
-        variables = new ArrayList<>();
+        tokens = new ArrayList<>(); //una lista vacía que se utilizará para almacenar tokens.
+        errors = new ArrayList<>(); //una lista vacía que se utilizará para almacenar errores de compilación.
+        textsColor = new ArrayList<>(); //Se crea una nueva instancia de la clase ArrayList para almacenar textos de color.
+        identProd = new ArrayList<>(); //Se crea una nueva instancia de la clase ArrayList para almacenar identificadores de productos.
+        ifProd = new ArrayList<>(); //Se crea una nueva instancia de la clase ArrayList para almacenar productos relacionados con la estructura "if".
+        whileProd = new ArrayList<>(); //Se crea una nueva instancia de la clase ArrayList para almacenar productos relacionados con la estructura "while".
+        asigProd = new ArrayList<>(); //Se crea una nueva instancia de la clase ArrayList para almacenar productos relacionados con asignaciones.
+        asigProdConID = new ArrayList<>(); //Se crea una nueva instancia de la clase ArrayList para almacenar productos relacionados con asignaciones que contienen identificadores.
+        compaProdIzq = new ArrayList<>(); //Se crea una nueva instancia de la clase ArrayList para almacenar productos relacionados con comparaciones en el lado izquierdo.
+        compaProdDer = new ArrayList<>(); //Se crea una nueva instancia de la clase ArrayList para almacenar productos relacionados con comparaciones en el lado derecho.
+        compaProdDoble = new ArrayList<>(); //Se crea una nueva instancia de la clase ArrayList para almacenar productos relacionados con comparaciones dobles.
+        operProdIzq = new ArrayList<>(); //Se crea una nueva instancia de la clase ArrayList para almacenar productos relacionados con operaciones en el lado izquierdo.
+        operProdDer = new ArrayList<>(); //Se crea una nueva instancia de la clase ArrayList para almacenar productos relacionados con operaciones en el lado derecho.
+        operProdDoble = new ArrayList<>(); //Se crea una nueva instancia de la clase ArrayList para almacenar productos relacionados con operaciones dobles.
+        funcProd = new ArrayList<>(); //Se crea una nueva instancia de la clase ArrayList para almacenar productos relacionados con funciones.
+        codObj = new ArrayList<>(); //Se crea una nueva instancia de la clase ArrayList para almacenar objetos de código.
+        codObjComp = new ArrayList<>(); // Se crea una nueva instancia de la clase ArrayList para almacenar objetos de código comprimidos.
+        variables = new ArrayList<>(); //Se crea una nueva instancia de la clase ArrayList para almacenar variables.
 
-        identificadores = new HashMap<>();
-        Functions.setAutocompleterJTextComponent(new String[]{}, jtpCode, () -> {
-            timerKeyReleased.restart();
+        identificadores = new HashMap<>(); //Se crea una nueva instancia de la clase HashMap para almacenar identificadores.
+        Functions.setAutocompleterJTextComponent(new String[]{}, jtpCode, () -> { //Se configura un autocompletado para el componente JTextComponent llamado "jtpCode". Se proporciona un arreglo vacío de cadenas y una expresión lambda como argumentos.
+            timerKeyReleased.restart(); //Se reinicia un temporizador llamado "timerKeyReleased".
         });
     }
 
