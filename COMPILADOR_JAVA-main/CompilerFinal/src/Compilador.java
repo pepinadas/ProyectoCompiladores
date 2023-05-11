@@ -411,48 +411,48 @@ public class Compilador extends javax.swing.JFrame {
                     .addComponent(LabelTecNM))) //Esto agrega la etiqueta LabelTecNM al grupo secundario.
         );
 
-        jLabel5.setFont(new java.awt.Font("Bauhaus 93", 1, 18)); // NOI18N
-        jLabel5.setText("Tabla de Tokens");
+        jLabel5.setFont(new java.awt.Font("Bauhaus 93", 1, 18)); // NOI18N //Esto establece la fuente de la etiqueta jLabel5 a "Bauhaus 93" con un tamaño de 18 píxeles y negrita.
+        jLabel5.setText("Tabla de Tokens"); //Esto establece el texto de la etiqueta jLabel5 en "Tabla de Tokens".
 
-        javax.swing.GroupLayout rootPanelLayout = new javax.swing.GroupLayout(rootPanel);
-        rootPanel.setLayout(rootPanelLayout);
-        rootPanelLayout.setHorizontalGroup(
-            rootPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(rootPanelLayout.createSequentialGroup()
-                .addGap(22, 22, 22)
-                .addGroup(rootPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(jScrollPane1)
-                    .addComponent(jScrollPane2, javax.swing.GroupLayout.DEFAULT_SIZE, 716, Short.MAX_VALUE)
-                    .addComponent(panelButtonCompilerExecute, javax.swing.GroupLayout.PREFERRED_SIZE, 620, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(18, 18, 18)
-                .addGroup(rootPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jLabel5)
-                    .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 473, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, rootPanelLayout.createSequentialGroup()
-                .addContainerGap(126, Short.MAX_VALUE)
-                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(94, 94, 94))
+        javax.swing.GroupLayout rootPanelLayout = new javax.swing.GroupLayout(rootPanel); //Esto crea un nuevo GroupLayout para el panel rootPanel.
+        rootPanel.setLayout(rootPanelLayout); //Esto establece el GroupLayout creado previamente como el diseño del panel rootPanel.
+        rootPanelLayout.setHorizontalGroup( //Esto comienza la definición de la disposición horizontal de los elementos en el panel rootPanel.
+            rootPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING) 
+            .addGroup(rootPanelLayout.createSequentialGroup() //Esto define un nuevo grupo secundario dentro del grupo principal para agregar más elementos.
+                .addGap(22, 22, 22) //Esto agrega un espacio en blanco de 22 píxeles entre el borde izquierdo del panel y el primer elemento dentro del grupo.
+                .addGroup(rootPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false) //Esto crea un nuevo grupo secundario para agregar más elementos debajo del grupo principal.
+                    .addComponent(jScrollPane1) //Esto agrega un JScrollPane al grupo secundario.
+                    .addComponent(jScrollPane2, javax.swing.GroupLayout.DEFAULT_SIZE, 716, Short.MAX_VALUE) //Esto agrega otro JScrollPane al grupo secundario con un ancho preferido de 716 píxeles y altura máxima de Short.MAX_VALUE.
+                    .addComponent(panelButtonCompilerExecute, javax.swing.GroupLayout.PREFERRED_SIZE, 620, javax.swing.GroupLayout.PREFERRED_SIZE)) //Esto agrega un JPanel al grupo secundario con un ancho preferido de 620 píxeles.
+                .addGap(18, 18, 18) //Esto agrega un espacio en blanco de 18 píxeles entre los elementos dentro del grupo secundario.
+                .addGroup(rootPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING) //Esto crea otro grupo secundario para agregar más elementos debajo del grupo principal.
+                    .addComponent(jLabel5) //Esto agrega la etiqueta jLabel5 al grupo secundario.
+                    .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 473, javax.swing.GroupLayout.PREFERRED_SIZE)) //Esto agrega otro JScrollPane al grupo secundario con un ancho preferido de 473 píxeles.
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)) //Esto agrega un espacio en blanco predeterminado al final del grupo principal.
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, rootPanelLayout.createSequentialGroup() //Esto define un nuevo grupo secundario dentro del grupo principal para agregar más elementos que se colocarán a la derecha del panel.
+                .addContainerGap(126, Short.MAX_VALUE) //Esto agrega un espacio en blanco de 126 píxeles a la derecha del panel.
+                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE) //Esto agrega el JPanel jPanel1 al grupo secundario con su tamaño predeterminado.
+                .addGap(94, 94, 94)) //Esto agrega un espacio en blanco de 94 píxeles a la derecha del JPanel.
         );
-        rootPanelLayout.setVerticalGroup(
-            rootPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, rootPanelLayout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(28, 28, 28)
-                .addGroup(rootPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(rootPanelLayout.createSequentialGroup()
-                        .addGap(7, 7, 7)
-                        .addComponent(jLabel5)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addGroup(rootPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(rootPanelLayout.createSequentialGroup()
-                                .addComponent(jScrollPane1)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 122, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addComponent(jScrollPane3, javax.swing.GroupLayout.DEFAULT_SIZE, 407, Short.MAX_VALUE)))
-                    .addComponent(panelButtonCompilerExecute, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(22, 22, 22))
+        rootPanelLayout.setVerticalGroup( // Establece la organización vertical del panel principal
+            rootPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING) //Establece la organización horizontal del panel principal con alineación izquierda
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, rootPanelLayout.createSequentialGroup() // Agrega un nuevo grupo con alineación derecha
+                .addContainerGap() // Agrega un espacio en blanco en la parte superior
+                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE) // Agrega un panel secundario con tamaño predeterminado al grupo principal
+                .addGap(28, 28, 28) // Agrega un espacio en blanco después del panel secundario
+                .addGroup(rootPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING) // Agrega un nuevo grupo con alineación izquierda
+                    .addGroup(rootPanelLayout.createSequentialGroup() // Agrega un nuevo subgrupo
+                        .addGap(7, 7, 7) // Agrega un espacio en blanco
+                        .addComponent(jLabel5) // Agrega una etiqueta de texto
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED) // Agrega un espacio en blanco
+                        .addGroup(rootPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING) // Agrega un nuevo subgrupo con alineación izquierda
+                            .addGroup(rootPanelLayout.createSequentialGroup() // Agrega un nuevo subgrupo
+                                .addComponent(jScrollPane1) // Agrega un área de texto desplazable
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED) // Agrega un espacio en blanco
+                                .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 122, javax.swing.GroupLayout.PREFERRED_SIZE)) // Agrega otra área de texto desplazable
+                            .addComponent(jScrollPane3, javax.swing.GroupLayout.DEFAULT_SIZE, 407, Short.MAX_VALUE))) // Agrega otra área de texto desplazable con un tamaño predeterminado
+                    .addComponent(panelButtonCompilerExecute, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)) // Agrega un panel secundario con tamaño predeterminado
+                .addGap(22, 22, 22)) // Agrega un espacio en blanco después de los componentes secundarios
         );
 
         getContentPane().add(rootPanel);
