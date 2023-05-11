@@ -1,3 +1,6 @@
+//Esta línea importa la biblioteca FlatLaf, 
+//que proporciona temas de apariencia plana para aplicaciones de escritorio en Java. 
+//En este caso, se está utilizando el tema "FlatIntelliJLaf" que imita la apariencia de la interfaz de usuario de IntelliJ IDEA.
 import com.formdev.flatlaf.FlatIntelliJLaf;
 import compilerTools.CodeBlock;
 import javax.swing.UIManager;
