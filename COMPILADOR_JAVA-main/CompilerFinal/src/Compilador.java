@@ -146,63 +146,63 @@ public class Compilador extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        rootPanel = new javax.swing.JPanel();
-        jScrollPane1 = new javax.swing.JScrollPane();
-        jtpCode = new javax.swing.JTextPane();
-        panelButtonCompilerExecute = new javax.swing.JPanel();
-        btnCompilar = new javax.swing.JButton();
-        btnCompilar1 = new javax.swing.JButton();
-        jButton1 = new javax.swing.JButton();
-        jButton2 = new javax.swing.JButton();
-        btnTripletas = new javax.swing.JButton();
-        jButton3 = new javax.swing.JButton();
-        jButton4 = new javax.swing.JButton();
-        btnEjecutar = new javax.swing.JButton();
-        jButton5 = new javax.swing.JButton();
-        jScrollPane2 = new javax.swing.JScrollPane();
-        jtaOutputConsole = new javax.swing.JTextArea();
-        jScrollPane3 = new javax.swing.JScrollPane();
-        tblTokens = new javax.swing.JTable();
-        jPanel1 = new javax.swing.JPanel();
-        jPanel2 = new javax.swing.JPanel();
-        jLabel2 = new javax.swing.JLabel();
-        LabelTecNM = new javax.swing.JLabel();
-        LabelITT = new javax.swing.JLabel();
-        jLabel5 = new javax.swing.JLabel();
+        rootPanel = new javax.swing.JPanel(); //Se crea una nueva instancia de un JPanel llamado "rootPanel".
+        jScrollPane1 = new javax.swing.JScrollPane(); //Se crea una nueva instancia de un JScrollPane llamado "jScrollPane1".
+        jtpCode = new javax.swing.JTextPane(); //Se crea una nueva instancia de un JTextPane llamado "jtpCode".
+        panelButtonCompilerExecute = new javax.swing.JPanel(); //Se crea una nueva instancia de un JPanel llamado "panelButtonCompilerExecute".
+        btnCompilar = new javax.swing.JButton(); //Se crea una nueva instancia de un JButton llamado "btnCompilar".
+        btnCompilar1 = new javax.swing.JButton(); //Se crea una nueva instancia de un JButton llamado "btnCompilar1".
+        jButton1 = new javax.swing.JButton(); //Se crea una nueva instancia de un JButton llamado "jButton1".
+        jButton2 = new javax.swing.JButton(); //Se crea una nueva instancia de un JButton llamado "jButton2".
+        btnTripletas = new javax.swing.JButton(); //Se crea una nueva instancia de un JButton llamado "btnTripletas".
+        jButton3 = new javax.swing.JButton(); //Se crea una nueva instancia de un JButton llamado "jButton3".
+        jButton4 = new javax.swing.JButton(); //Se crea una nueva instancia de un JButton llamado "jButton4".
+        btnEjecutar = new javax.swing.JButton(); //Se crea una nueva instancia de un JButton llamado "btnEjecutar".
+        jButton5 = new javax.swing.JButton(); // Se crea una nueva instancia de un JButton llamado "jButton5".
+        jScrollPane2 = new javax.swing.JScrollPane(); //Se crea una nueva instancia de un JScrollPane llamado "jScrollPane2".
+        jtaOutputConsole = new javax.swing.JTextArea(); //Se crea una nueva instancia de un JTextArea llamado "jtaOutputConsole".
+        jScrollPane3 = new javax.swing.JScrollPane(); //Se crea una nueva instancia de un JScrollPane llamado "jScrollPane3".
+        tblTokens = new javax.swing.JTable(); //Se crea una nueva instancia de un JTable llamado "tblTokens".
+        jPanel1 = new javax.swing.JPanel(); //Se crea una nueva instancia de un JPanel llamado "jPanel1".
+        jPanel2 = new javax.swing.JPanel(); //Se crea una nueva instancia de un JPanel llamado "jPanel2".
+        jLabel2 = new javax.swing.JLabel(); //Se crea una nueva instancia de un JLabel llamado "jLabel2".
+        LabelTecNM = new javax.swing.JLabel(); //Se crea una nueva instancia de un JLabel llamado "LabelTecNM".
+        LabelITT = new javax.swing.JLabel(); //Se crea una nueva instancia de un JLabel llamado "LabelITT".
+        jLabel5 = new javax.swing.JLabel(); //Se crea una nueva instancia de un JLabel llamado "jLabel5".
 
-        setDefaultCloseOperation(javax.swing.WindowConstants.DO_NOTHING_ON_CLOSE);
-        getContentPane().setLayout(new javax.swing.BoxLayout(getContentPane(), javax.swing.BoxLayout.LINE_AXIS));
+        setDefaultCloseOperation(javax.swing.WindowConstants.DO_NOTHING_ON_CLOSE); // Establece que no se haga nada cuando se presione el botón de cerrar la ventana.
+        getContentPane().setLayout(new javax.swing.BoxLayout(getContentPane(), javax.swing.BoxLayout.LINE_AXIS)); //Establece el layout del panel principal como un BoxLayout con dirección horizontal.
 
-        rootPanel.setBackground(new java.awt.Color(204, 204, 204));
+        rootPanel.setBackground(new java.awt.Color(204, 204, 204)); //Establece el color de fondo del panel principal en un tono de gris claro.
 
-        jScrollPane1.setViewportView(jtpCode);
+        jScrollPane1.setViewportView(jtpCode); //Agrega un componente de vista de texto desplazable para el editor de código, que permite ver y navegar el contenido del JTextPane jtpCode.
 
-        btnCompilar.setText("Nuevo");
-        btnCompilar.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnCompilarActionPerformed(evt);
+        btnCompilar.setText("Nuevo"); //Establece el texto del botón "Compilar" como "Nuevo".
+        btnCompilar.addActionListener(new java.awt.event.ActionListener() { //Agrega un escucha de evento para el botón "Compilar" que implementa la interfaz ActionListener.
+            public void actionPerformed(java.awt.event.ActionEvent evt) { //Define el método actionPerformed que se ejecutará cuando se presione el botón "Compilar".
+                btnCompilarActionPerformed(evt); //Llama al método btnCompilarActionPerformed que maneja el evento de hacer clic en el botón "Compilar".
             }
         });
 
-        btnCompilar1.setText("Compilar");
-        btnCompilar1.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnCompilar1ActionPerformed(evt);
+        btnCompilar1.setText("Compilar"); //Establece el texto del botón "Compilar1" como "Compilar".
+        btnCompilar1.addActionListener(new java.awt.event.ActionListener() { //Agrega un escucha de evento para el botón "Compilar1" que implementa la interfaz ActionListener.
+            public void actionPerformed(java.awt.event.ActionEvent evt) { //Define el método actionPerformed que se ejecutará cuando se presione el botón "Compilar1".
+                btnCompilar1ActionPerformed(evt); //Llama al método btnCompilar1ActionPerformed que maneja el evento de hacer clic en el botón "Compilar1".
             }
         });
 
-        jButton1.setText("Guardar");
-        jButton1.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton1ActionPerformed(evt);
+        jButton1.setText("Guardar"); //Establece el texto del botón "jButton1" como "Guardar".
+        jButton1.addActionListener(new java.awt.event.ActionListener() { //Agrega un escucha de evento para el botón "jButton1" que implementa la interfaz ActionListener.
+            public void actionPerformed(java.awt.event.ActionEvent evt) { //Define el método actionPerformed que se ejecutará cuando se presione el botón "jButton1".
+                jButton1ActionPerformed(evt); //Llama al método jButton1ActionPerformed que maneja el evento de hacer clic en el botón "jButton1".
             }
         });
 
-        jButton2.setText("Abrir");
-        jButton2.setToolTipText("");
-        jButton2.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton2ActionPerformed(evt);
+        jButton2.setText("Abrir"); //Establece el texto del botón "jButton2" como "Abrir".
+        jButton2.setToolTipText(""); //Establece un tooltip vacío para el botón "jButton2".
+        jButton2.addActionListener(new java.awt.event.ActionListener() { // Agrega un escucha de evento para el botón "jButton2" que implementa la interfaz ActionListener.
+            public void actionPerformed(java.awt.event.ActionEvent evt) { //Define el método actionPerformed que se ejecutará cuando se presione el botón "jButton2".
+                jButton2ActionPerformed(evt); //Llama al método jButton2ActionPerformed que maneja el evento de hacer clic en el botón "jButton2".
             }
         });
 
