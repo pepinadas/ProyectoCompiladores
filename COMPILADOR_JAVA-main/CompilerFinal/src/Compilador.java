@@ -465,73 +465,73 @@ public class Compilador extends javax.swing.JFrame {
         clearFields(); // Limpia los campos de entrada de texto y el área de texto de salida
     }//GEN-LAST:event_btnCompilarActionPerformed
 
-    private void btnEjecutarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEjecutarActionPerformed
-        btnCompilar.doClick();
-        if (codeHasBeenCompiled) {
-            if (!errors.isEmpty()) {
-                JOptionPane.showMessageDialog(null, "No se puede ejecutar el código ya que se encontró uno o más errores",
-                        "Error en la compilación", JOptionPane.ERROR_MESSAGE);
-            } else {
-                CodeBlock codeBlock = Functions.splitCodeInCodeBlocks(tokens, "{", "}", ";");
-                System.out.println(codeBlock);
-                ArrayList<String> blocksOfCode = codeBlock.getBlocksOfCodeInOrderOfExec();
-                System.out.println(blocksOfCode);
+    private void btnEjecutarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEjecutarActionPerformed // Define un método de acción que se ejecuta cuando se hace clic en el botón "btnEjecutar"
+        btnCompilar.doClick(); // Hace clic en el botón "btnCompilar"
+        if (codeHasBeenCompiled) { // Verifica si el código se ha compilado con éxito
+            if (!errors.isEmpty()) { // Verifica si se encontraron errores durante la compilación
+                JOptionPane.showMessageDialog(null, "No se puede ejecutar el código ya que se encontró uno o más errores", 
+                        "Error en la compilación", JOptionPane.ERROR_MESSAGE); // Muestra un mensaje de error si se encontraron errores
+            } else { // Si no hay errores
+                CodeBlock codeBlock = Functions.splitCodeInCodeBlocks(tokens, "{", "}", ";"); // Separa el código en bloques de código utilizando los caracteres "{", "}", y ";"
+                System.out.println(codeBlock); // Imprime los bloques de código en la consola
+                ArrayList<String> blocksOfCode = codeBlock.getBlocksOfCodeInOrderOfExec(); // Obtiene los bloques de código en el orden de ejecución
+                System.out.println(blocksOfCode); // Imprime los bloques de código en el orden de ejecución en la consola
 
             }
         }
     }//GEN-LAST:event_btnEjecutarActionPerformed
 
-    private void btnCompilar1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCompilar1ActionPerformed
-        codObjComp.clear();
-        variables.clear();
-        compile();
+    private void btnCompilar1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCompilar1ActionPerformed // Define un método de acción que se ejecuta cuando se hace clic en el botón "btnCompilar1"
+        codObjComp.clear(); // Limpia el contenido del ArrayList "codObjComp"
+        variables.clear(); // Limpia el contenido del ArrayList "variables"
+        compile(); // Compila el código ingresado en los campos de entrada de texto
     }//GEN-LAST:event_btnCompilar1ActionPerformed
 
-    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-          if (directorio.Save()) {           
-            clearFields();
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed // Define un método de acción que se ejecuta cuando se hace clic en el botón "jButton1"
+          if (directorio.Save()) {  // Guarda el archivo actual en la ubicación especificada por el usuario y verifica si la operación fue exitosa         
+            clearFields(); // Limpia los campos de entrada de texto y el área de texto de salida
         }
     }//GEN-LAST:event_jButton1ActionPerformed
 
-    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
-         if (directorio.Open()) {
-            colorAnalysis();
-            clearFields();
+    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed // Define un método de acción que se ejecuta cuando se hace clic en el botón "jButton2"
+         if (directorio.Open()) { // Abre el archivo seleccionado por el usuario y verifica si la operación fue exitosa
+            colorAnalysis(); // Realiza un análisis de color en el código y lo muestra en los campos de entrada de texto y el área de texto de salida
+            clearFields(); // Limpia los campos de entrada de texto y el área de texto de salida
         }
     }//GEN-LAST:event_jButton2ActionPerformed
 
-    private void btnTripletasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnTripletasActionPerformed
-        JTextArea textArea = new JTextArea(codigoIntermedio);
-        JScrollPane scrollPane = new JScrollPane(textArea);  
-        textArea.setLineWrap(true);  
-        textArea.setWrapStyleWord(true); 
-        textArea.setEditable(false);
-        scrollPane.setPreferredSize( new Dimension( 400, 500 ) );
-        JOptionPane.showMessageDialog(null, scrollPane, "Tripletas",JOptionPane.PLAIN_MESSAGE);        
+    private void btnTripletasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnTripletasActionPerformed // Define un método de acción que se ejecuta cuando se hace clic en el botón "btnTripletas"
+        JTextArea textArea = new JTextArea(codigoIntermedio); // Crea un JTextArea que muestra el código intermedio
+        JScrollPane scrollPane = new JScrollPane(textArea);  // Crea un JScrollPane para agregar barras de desplazamiento al JTextArea
+        textArea.setLineWrap(true);  // Establece el ajuste de línea automático en true
+        textArea.setWrapStyleWord(true); // Establece el ajuste de palabra automático en true
+        textArea.setEditable(false); // Deshabilita la edición del JTextArea
+        scrollPane.setPreferredSize( new Dimension( 400, 500 ) ); // Establece el tamaño preferido del JScrollPane
+        JOptionPane.showMessageDialog(null, scrollPane, "Tripletas",JOptionPane.PLAIN_MESSAGE);  // Muestra el JScrollPane en un cuadro de diálogo       
     }//GEN-LAST:event_btnTripletasActionPerformed
 
-    private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
-        String obj ="------CODIGO OBJETO-------\n";
-        for(String obj1: codObjComp){ obj+=obj1; } 
-        JTextArea textArea = new JTextArea(obj);
+    private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed // Define un método de acción que se ejecuta cuando se hace clic en el botón "jButton3"
+        String obj ="------CODIGO OBJETO-------\n"; // Crea una cadena de texto que representa el código objeto
+        for(String obj1: codObjComp){ obj+=obj1; }  // Agrega cada línea del código objeto a la cadena de texto
+        JTextArea textArea = new JTextArea(obj); // Crea un JTextArea que muestra el código objeto
         //generamos el codigo ensamblador
-        ensamblador =  ensamblador(obj.replaceAll("------CODIGO OBJETO-------\n\n\n",""));
-        JScrollPane scrollPane = new JScrollPane(textArea);  
-        textArea.setLineWrap(true);  
-        textArea.setWrapStyleWord(true); 
-        textArea.setEditable(false);
-        scrollPane.setPreferredSize( new Dimension( 400, 500 ) );
-        JOptionPane.showMessageDialog(null, scrollPane, "Codigo Objeto",JOptionPane.PLAIN_MESSAGE);  
+        ensamblador =  ensamblador(obj.replaceAll("------CODIGO OBJETO-------\n\n\n","")); // Llama a un método "ensamblador" que genera el código ensamblador
+        JScrollPane scrollPane = new JScrollPane(textArea);  // Crea un JScrollPane para agregar barras de desplazamiento al JTextArea
+        textArea.setLineWrap(true);  // Establece el ajuste de línea automático en true
+        textArea.setWrapStyleWord(true); // Establece el ajuste de palabra automático en true
+        textArea.setEditable(false); // Deshabilita la edición del JTextArea
+        scrollPane.setPreferredSize( new Dimension( 400, 500 ) ); // Establece el tamaño preferido del JScrollPane
+        JOptionPane.showMessageDialog(null, scrollPane, "Codigo Objeto",JOptionPane.PLAIN_MESSAGE);   // Muestra el JScrollPane en un cuadro de diálogo
     }//GEN-LAST:event_jButton3ActionPerformed
 
-    private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
+    private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed //Se crea un objeto JTextArea y se le asigna la cadena ensamblador como su contenido.
         //creamos la ventana emergente para presentar el codigo ensamblador
-        JTextArea textArea = new JTextArea(ensamblador);
-        JScrollPane scrollPane = new JScrollPane(textArea);  
-        textArea.setLineWrap(true);  
-        textArea.setWrapStyleWord(true); 
-        textArea.setEditable(false);
-        scrollPane.setPreferredSize( new Dimension( 400, 500 ) );
+        JTextArea textArea = new JTextArea(ensamblador); 
+        JScrollPane scrollPane = new JScrollPane(textArea);  //Se crea un objeto JScrollPane y se le asigna el objeto JTextArea para que sea desplazable.
+        textArea.setLineWrap(true);  //Se configura la JTextArea para que ajuste automáticamente las líneas de texto.
+        textArea.setWrapStyleWord(true); // Se configura la JTextArea para que no corte las palabras al final de la línea.
+        textArea.setEditable(false); //Se deshabilita la edición de la JTextArea.
+        scrollPane.setPreferredSize( new Dimension( 400, 500 ) ); //Se establece el tamaño preferido del JScrollPane.
         JOptionPane.showMessageDialog(null, scrollPane, "Tripletas",JOptionPane.PLAIN_MESSAGE);
         //creamos el archivo y lo ejecutamos
         archivoT(".\\COD_OBJ.asm",ensamblador);
