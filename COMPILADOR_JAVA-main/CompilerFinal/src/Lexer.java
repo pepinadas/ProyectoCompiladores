@@ -5,7 +5,7 @@
 import compilerTools.Token; //importa la clase Token del paquete compilerTools, lo que permite utilizar la clase Token 
 
 
-// See https://github.com/jflex-de/jflex/issues/222
+// https://github.com/jflex-de/jflex/issues/222
 @SuppressWarnings("FallThrough")
 class Lexer {
 
