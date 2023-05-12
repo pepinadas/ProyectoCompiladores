@@ -1,0 +1,10 @@
+//area  de un circulo 
+
+int radio = 5;
+float pi = 3.1416;
+
+float area = pi*radio*radio;
+
+//perimetro de un circulo 
+
+float perimetro = 2*pi*radio;

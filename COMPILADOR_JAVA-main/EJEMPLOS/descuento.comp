@@ -1,0 +1,10 @@
+int precio= 100;
+float porcentaje = 0.3;
+
+float descuento = precio*porcentaje;
+
+int preciofinal =precio-descuento;
+
+string pf = "EL_PRECIO_FINAL_ES_70";  
+
+input (pf);

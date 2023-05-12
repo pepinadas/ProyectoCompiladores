@@ -1,0 +1,17 @@
+// programa para saber que tipo de triangulo es 
+
+int lado1 = 5;
+int lado2 = 5;
+int lado3 = 5;
+
+if ( lado1 == lado2 and lado1 == lado3){
+  input ("EL_TRIANGULO_ES_EQUILATERO");
+} 
+
+if (lado1 == lado2 and lado1 != lado3){
+ input("EL_TRIANGULO_ES_ISOSELES");
+ } 
+
+if (lado1 != lado2 and lado1 != lado3 ){
+ input("EL_TRIANGULO_ES_ESCALENO");
+ } 
