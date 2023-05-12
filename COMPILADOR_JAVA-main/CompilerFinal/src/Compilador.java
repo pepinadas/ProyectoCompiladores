@@ -96,7 +96,7 @@ public class Compilador extends javax.swing.JFrame {
 
     private void init() {
         title = "Compiler"; // Establece el título de la ventana
-        setLocationRelativeTo(null); // Centra la ventana en la pantalla
+        setLocationRelativeTo(null); // Centra la ventana en la pantalla 
         setTitle(title); // Establece el título de la ventana
         directorio = new Directory(this, jtpCode, title, ".comp");// Inicializa un objeto de la clase Directorio
         addWindowListener(new WindowAdapter() { // Añade un listener al evento de cierre de ventana Cuando presiona la "X" de la esquina superior derecha
@@ -532,97 +532,104 @@ public class Compilador extends javax.swing.JFrame {
         textArea.setWrapStyleWord(true); // Se configura la JTextArea para que no corte las palabras al final de la línea.
         textArea.setEditable(false); //Se deshabilita la edición de la JTextArea.
         scrollPane.setPreferredSize( new Dimension( 400, 500 ) ); //Se establece el tamaño preferido del JScrollPane.
-        JOptionPane.showMessageDialog(null, scrollPane, "Tripletas",JOptionPane.PLAIN_MESSAGE);
+        JOptionPane.showMessageDialog(null, scrollPane, "Tripletas",JOptionPane.PLAIN_MESSAGE); //Se muestra una ventana emergente que contiene el JScrollPane.
         //creamos el archivo y lo ejecutamos
-        archivoT(".\\COD_OBJ.asm",ensamblador);
-        abrirarchivo(".\\COD_OBJ.asm");
+        archivoT(".\\COD_OBJ.asm",ensamblador); //Se llama a un método llamado archivoT que crea un archivo con el contenido de la cadena ensamblador en la ruta especificada.
+        abrirarchivo(".\\COD_OBJ.asm"); //Se llama a un método llamado abrirarchivo que abre el archivo creado anteriormente.
     }//GEN-LAST:event_jButton4ActionPerformed
 
     private void jButton5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton5ActionPerformed
         // TODO add your handling code here:
-        optimizacion();
-        JTextArea textArea = new JTextArea(codigoOptimizado);
-        JScrollPane scrollPane = new JScrollPane(textArea);  
-        textArea.setLineWrap(true);  
-        textArea.setWrapStyleWord(true); 
-        textArea.setEditable(false);
-        scrollPane.setPreferredSize( new Dimension( 400, 500 ) );
-        JOptionPane.showMessageDialog(null, scrollPane, "Optimizacion",JOptionPane.PLAIN_MESSAGE);
-                codeHasBeenCompiled = true;
+        optimizacion(); //Se llama a un método llamado optimizacion que realiza alguna optimización de código (probablemente).
+        JTextArea textArea = new JTextArea(codigoOptimizado); //Se crea un objeto JTextArea y se le asigna la cadena codigoOptimizado como su contenido.
+        JScrollPane scrollPane = new JScrollPane(textArea);  //Se crea un objeto JScrollPane y se le asigna el objeto JTextArea para que sea desplazable.
+        textArea.setLineWrap(true);  //Se configura la JTextArea para que ajuste automáticamente las líneas de texto.
+        textArea.setWrapStyleWord(true); //Se configura la JTextArea para que no corte las palabras al final de la línea.
+        textArea.setEditable(false); //Se deshabilita la edición de la JTextArea.
+        scrollPane.setPreferredSize( new Dimension( 400, 500 ) ); //Se establece el tamaño preferido del JScrollPane.
+        JOptionPane.showMessageDialog(null, scrollPane, "Optimizacion",JOptionPane.PLAIN_MESSAGE); //Se muestra una ventana emergente que contiene el JScrollPane.
+                codeHasBeenCompiled = true; //Se establece la variable codeHasBeenCompiled en true, lo que probablemente indica que el código ha sido compilado con éxito después de la optimización.
 
     }//GEN-LAST:event_jButton5ActionPerformed
     public void archivoT(String ruta, String Objeto) {
-          try {
+          try { //Se inicia un bloque try para manejar cualquier excepción que se genere dentro del bloque.
               //String ruta = "D:\\Pollo\\Descargas\\COMPILADORES COMPAÑEROS\\MicroCompiler_09\\src\\MicroC\\codigoTres.txt";
-              String contenido = Objeto;
-              File file = new File(ruta);
+              String contenido = Objeto; //Se crea una cadena de texto y se le asigna el contenido del parámetro Objeto.
+              File file = new File(ruta); //Se crea un objeto File con la ruta especificada.
               // Si el archivo no existe es creado
-              if (!file.exists()) {
-                  file.createNewFile();
+              if (!file.exists()) { //Si el archivo no existe, se crea un nuevo archivo en la ruta especificada.
+                  file.createNewFile(); //Se crea un objeto FileWriter que escribirá en el archivo especificado.
               }
-              FileWriter fw = new FileWriter(file);
-              BufferedWriter bw = new BufferedWriter(fw);
-              bw.write(contenido);
-              bw.close();
+              FileWriter fw = new FileWriter(file); 
+              BufferedWriter bw = new BufferedWriter(fw); //Se crea un objeto BufferedWriter que escribirá en el archivo especificado de manera eficiente.
+              bw.write(contenido); //Se escribe la cadena de texto contenido en el archivo.
+              bw.close(); //Se cierra el BufferedWriter.
           } catch (Exception e) {
-              e.printStackTrace();
+              e.printStackTrace(); //Si se genera alguna excepción dentro del bloque try, se imprime la traza de la pila de la excepción en la consola.
           }
       }//archivoT
 
     public void abrirarchivo(String archivo){
-           try {
-                  File objetofile = new File (archivo);
-                  Desktop.getDesktop().open(objetofile);
+           try { //Se inicia un bloque try para manejar cualquier excepción que se genere dentro del bloque.
+                  File objetofile = new File (archivo); //Se crea un objeto File que representa el archivo especificado por la ruta archivo.
+                  Desktop.getDesktop().open(objetofile); //Se llama al método open del objeto Desktop para abrir el archivo especificado en el sistema operativo predeterminado del usuario.
            }catch (IOException ex) {
-                  System.out.println(ex);
+                  System.out.println(ex); //Si se genera alguna excepción dentro del bloque try, se imprime el mensaje de error en la consola. En este caso, la excepción que se maneja es IOException, que se produce cuando ocurre un error de E/S al abrir el archivo.
            }
        }//fin_AbrirArchivo
     private void compile() {
-        btnTripletas.setEnabled(true);
-        jButton3.setEnabled(true);
-        jButton4.setEnabled(true);
-        clearFields();
-        lexicalAnalysis();
-        fillTableTokens();
-        syntacticAnalysis();
-        semanticAnalysis();
+        btnTripletas.setEnabled(true); //Activa el botón "Tripletas".
+        jButton3.setEnabled(true); // Activa el botón "Código Intermedio".
+        jButton4.setEnabled(true); //Activa el botón "Código Ensamblador".
+        clearFields(); //Limpia los campos de texto en la interfaz de usuario.
+        lexicalAnalysis(); //Realiza el análisis léxico del código fuente proporcionado.
+        fillTableTokens(); //Rellena una tabla con los tokens encontrados durante el análisis léxico.
+        syntacticAnalysis(); //Realiza el análisis sintáctico del código fuente proporcionado.
+        semanticAnalysis(); //Realiza el análisis semántico del código fuente proporcionado.
         
-        printConsole();
-        int resp = JOptionPane.showConfirmDialog(null, "¿Desea optimizar el código?", "", JOptionPane.YES_NO_OPTION);
-        if (resp == JOptionPane.YES_OPTION) {
-            jButton4.setEnabled(false);
-            optimizacion();
-        } else {
-            codigoIntermedio();
+        printConsole(); // Muestra en la consola el resultado del análisis léxico y sintáctico.
+        int resp = JOptionPane.showConfirmDialog(null, "¿Desea optimizar el código?", "", JOptionPane.YES_NO_OPTION); //Presenta un cuadro de diálogo con una pregunta para el usuario y permite que el usuario seleccione entre "Sí" o "No".
+        if (resp == JOptionPane.YES_OPTION) { //Verifica si el usuario seleccionó "Sí".
+            jButton4.setEnabled(false); //Desactiva el botón "Código Ensamblador".
+            optimizacion();  //Realiza la optimización del código fuente proporcionado.
+        } else { //Si el usuario seleccionó "No".
+            codigoIntermedio(); //Genera el código intermedio del código fuente proporcionado.
 }
         
         //codigoIntermedio();
-        codeHasBeenCompiled = true;
-    }
+        codeHasBeenCompiled = true; //Esta variable generalmente se utiliza para indicar si el código fuente ha sido compilado con éxito o no. Al establecerla en true, se indica que el código fuente se ha compilado con éxito.
+    } 
 
     private void lexicalAnalysis() {
         // Extraer tokens
-        Lexer lexer;
+        Lexer lexer; //Declara una variable de tipo Lexer, que se utiliza para analizar el código fuente y extraer los tokens.
         try {
-            File codigo = new File("code.encrypter");
-            FileOutputStream output = new FileOutputStream(codigo);
-            byte[] bytesText = jtpCode.getText().getBytes();
-            output.write(bytesText);
-            BufferedReader entrada = new BufferedReader(new InputStreamReader(new FileInputStream(codigo), "UTF8"));
-            lexer = new Lexer(entrada);
-            while (true) {
-                Token token = lexer.yylex();
-                if (token == null) {
-                    break;
+            File codigo = new File("code.encrypter"); //Crea un nuevo objeto File con el nombre del archivo donde se guardará el código fuente.
+            FileOutputStream output = new FileOutputStream(codigo); //Crea un nuevo objeto FileOutputStream para escribir el código fuente en el archivo.
+            byte[] bytesText = jtpCode.getText().getBytes(); //Convierte el texto del código fuente en un arreglo de bytes.
+            output.write(bytesText); //Escribe el arreglo de bytes en el archivo.
+            BufferedReader entrada = new BufferedReader(new InputStreamReader(new FileInputStream(codigo), "UTF8")); //Crea un objeto BufferedReader para leer el archivo.
+            lexer = new Lexer(entrada); //Crea un nuevo objeto Lexer con el archivo leído y asigna el objeto a la variable lexer.
+            while (true) { //Inicia un ciclo infinito para leer los tokens.
+                Token token = lexer.yylex(); //Lee el siguiente token utilizando el objeto lexer.
+                if (token == null) { //Si no hay más tokens, se sale del ciclo.
+                    break; 
                 }
-                tokens.add(token);
+                tokens.add(token); //Agrega el token leído a una lista de tokens.
             }
-        } catch (FileNotFoundException ex) {
+        } catch (FileNotFoundException ex) { //Maneja una excepción si el archivo de código fuente no se encuentra.
             System.out.println("El archivo no pudo ser encontrado... " + ex.getMessage());
-        } catch (IOException ex) {
+        } catch (IOException ex) { // Maneja una excepción si hay un error al escribir o leer el archivo.
             System.out.println("Error al escribir en el archivo... " + ex.getMessage());
         }
     }
+    
+    /*
+        Este código llama al método `syntacticAnalysis()` que inicia el análisis sintáctico del código fuente. 
+        Para ello, se crea una instancia de la clase `Grammar` pasándole como parámetros los tokens obtenidos durante el análisis léxico y 
+        una lista vacía para almacenar los errores sintácticos encontrados. La clase `Grammar` se encarga de realizar el análisis sintáctico 
+        mediante la implementación de una gramática y genera los errores sintácticos correspondientes, si los hubiera.
+    */
 
     private void syntacticAnalysis() {
         Grammar gramatica = new Grammar(tokens, errors);
@@ -892,6 +899,12 @@ public class Compilador extends javax.swing.JFrame {
 
         gramatica.show();
     }
+    
+    /*
+        Este código muestra una función llamada "semanticAnalysis", que comienza declarando un objeto HashMap llamado "tiposDatos" que se utiliza 
+        para asignar tipos de datos a ciertas palabras clave. Luego, se agregan las palabras clave y sus correspondientes tipos de datos. 
+        Se declara una variable entera llamada "i" e inicializada en cero.
+    */
 
     private void semanticAnalysis() {
         HashMap<String,String> tiposDatos = new HashMap<>();
@@ -1617,61 +1630,61 @@ public class Compilador extends javax.swing.JFrame {
     
     private void colorAnalysis() {
         /* Limpiar el arreglo de colores */
-        textsColor.clear();
+        textsColor.clear(); //se llama al método clear() de una lista textsColor para eliminar cualquier elemento existente.
         /* Extraer rangos de colores */
-        LexerColor lexerColor;
+        LexerColor lexerColor; //se declara una variable llamada lexerColor del tipo LexerColor.
         try {
-            File codigo = new File("color.encrypter");
-            FileOutputStream output = new FileOutputStream(codigo);
-            byte[] bytesText = jtpCode.getText().getBytes();
-            output.write(bytesText);
-            BufferedReader entrada = new BufferedReader(new InputStreamReader(new FileInputStream(codigo), "UTF8"));
-            lexerColor = new LexerColor(entrada);
-            while (true) {
-                TextColor textColor = lexerColor.yylex();
-                if (textColor == null) {
+            File codigo = new File("color.encrypter"); //se crea un objeto File llamado codigo y se le asigna el archivo "color.encrypter" como valor.
+            FileOutputStream output = new FileOutputStream(codigo); //se crea un objeto FileOutputStream llamado output que permite escribir datos en el archivo especificado.
+            byte[] bytesText = jtpCode.getText().getBytes(); //se obtiene el texto del componente jtpCode y se convierte en un arreglo de bytes.
+            output.write(bytesText); //se escribe el arreglo de bytes en el archivo especificado por output.
+            BufferedReader entrada = new BufferedReader(new InputStreamReader(new FileInputStream(codigo), "UTF8")); // se crea un objeto BufferedReader llamado entrada que permite leer datos desde el archivo especificado por codigo.
+            lexerColor = new LexerColor(entrada); //se crea un objeto LexerColor y se le pasa entrada como parámetro en su constructor.
+            while (true) { //se inicia un ciclo while infinito.
+                TextColor textColor = lexerColor.yylex(); //se llama al método yylex() de lexerColor para obtener un objeto TextColor.
+                if (textColor == null) { //si textColor es nulo, se rompe el ciclo while.
                     break;
                 }
-                textsColor.add(textColor);
+                textsColor.add(textColor); //se agrega textColor a la lista textsColor.
             }
         } catch (FileNotFoundException ex) {
             System.out.println("El archivo no pudo ser encontrado... " + ex.getMessage());
         } catch (IOException ex) {
             System.out.println("Error al escribir en el archivo... " + ex.getMessage());
         }
-        Functions.colorTextPane(textsColor, jtpCode, new Color(40, 40, 40));
+        Functions.colorTextPane(textsColor, jtpCode, new Color(40, 40, 40)); //se llama al método colorTextPane() de la clase Functions y se le pasan textsColor, jtpCode y un objeto Color como parámetros. Este método se encarga de colorear el texto del componente jtpCode según los rangos de colores extraídos por lexerColor.
     }
 
-    private void fillTableTokens() {
-        tokens.forEach(token -> {
-            Object[] data = new Object[]{token.getLexicalComp(), token.getLexeme(), "[" + token.getLine() + ", " + token.getColumn() + "]"};
-            Functions.addRowDataInTable(tblTokens, data);
+    private void fillTableTokens() { 
+        tokens.forEach(token -> { //se llama al método forEach() de la lista tokens y se proporciona una expresión lambda que define una acción a realizar para cada elemento de la lista.
+            Object[] data = new Object[]{token.getLexicalComp(), token.getLexeme(), "[" + token.getLine() + ", " + token.getColumn() + "]"}; //se crea un arreglo de objetos data que contiene el componente léxico, el lexema y la posición de cada token.
+            Functions.addRowDataInTable(tblTokens, data); //se llama al método addRowDataInTable() de la clase Functions y se le pasan tblTokens (una tabla de datos) y data como parámetros. Este método se encarga de agregar una nueva fila a la tabla con los datos proporcionados en data. En resumen, este método llena la tabla de datos tblTokens con información de cada token en la lista tokens.
         });
     }
 
     private void printConsole() {
-        int sizeErrors = errors.size();
-        if (sizeErrors > 0) {
-            Functions.sortErrorsByLineAndColumn(errors);
-            String strErrors = "\n";
-            for (ErrorLSSL error : errors) {
-                String strError = String.valueOf(error);
-                strErrors += strError + "\n";
+        int sizeErrors = errors.size(); //se obtiene la cantidad de elementos en la lista errors y se guarda en la variable sizeErrors.
+        if (sizeErrors > 0) { //se evalúa si sizeErrors es mayor que cero. Si es así, se ejecutan las instrucciones dentro del bloque de código.
+            Functions.sortErrorsByLineAndColumn(errors); //se llama al método sortErrorsByLineAndColumn() de la clase Functions y se le pasa la lista errors como parámetro. Este método ordena la lista errors según la línea y columna de cada error.
+            String strErrors = "\n"; //se crea una cadena de texto vacía llamada strErrors y se le agrega un salto de línea al principio.
+            for (ErrorLSSL error : errors) { //se inicia un ciclo for-each que recorre la lista errors y asigna cada elemento a la variable error.
+                String strError = String.valueOf(error); //se convierte el objeto error a una cadena de texto y se guarda en la variable strError.
+                strErrors += strError + "\n"; // se agrega strError a strErrors y se agrega un salto de línea al final.
             }
-            jtaOutputConsole.setText("Compilación terminada...\n" + strErrors + "\nLa compilación terminó con errores...");
+            jtaOutputConsole.setText("Compilación terminada...\n" + strErrors + "\nLa compilación terminó con errores..."); 
         } else {
-            jtaOutputConsole.setText("Compilación terminada...");
+            jtaOutputConsole.setText("Compilación terminada..."); ////se llama al método setText() del componente jtaOutputConsole y se le asigna una cadena de texto que indica que la compilación terminó y muestra los errores encontrados. Si sizeErrors es cero, solo se mostrará "Compilación terminada...".
         }
-        jtaOutputConsole.setCaretPosition(0);
+        jtaOutputConsole.setCaretPosition(0); //se llama al método setCaretPosition() del componente jtaOutputConsole y se le asigna el valor cero. Esto coloca el cursor al principio del componente, lo que permite al usuario ver el mensaje completo. 
     }
 
     private void clearFields() {
-        Functions.clearDataInTable(tblTokens);
-        jtaOutputConsole.setText("");
-        tokens.clear();
-        errors.clear();
-        if(identProdCopia !=null)
-            identProdCopia.clear();
+        Functions.clearDataInTable(tblTokens); //se llama al método clearDataInTable() de la clase Functions y se le pasa el componente tblTokens como parámetro. Este método limpia los datos en la tabla. 
+        jtaOutputConsole.setText(""); // se llama al método setText() del componente jtaOutputConsole y se le asigna una cadena de texto vacía. Esto limpia el contenido en el componente.
+        tokens.clear(); //se llama al método clear() de la lista tokens. Esto elimina todos los elementos de la lista.
+        errors.clear(); //se llama al método clear() de la lista errors. Esto elimina todos los elementos de la lista.
+        if(identProdCopia !=null) 
+            identProdCopia.clear(); //si la lista identProdCopia no es nula, se llama al método clear() para eliminar todos los elementos de la lista.
         if(identProd !=null)
             identProd.clear();
         if(asigProd !=null)
@@ -1695,9 +1708,9 @@ public class Compilador extends javax.swing.JFrame {
         if(ifProd !=null)
             ifProd.clear();
         if(whileProd !=null)
-            whileProd.clear();
-        identificadores.clear();
-        codeHasBeenCompiled = false;
+            whileProd.clear(); //Se repite lo mismo para las listas identProd, asigProd, asigProdConID, compaProdIzq, compaProdDer, compaProdDoble, operProdIzq, operProdDer, operProdDoble, funcProd, ifProd, y whileProd.
+        identificadores.clear(); // se llama al método clear() de la lista identificadores. Esto elimina todos los elementos de la lista.
+        codeHasBeenCompiled = false; //se asigna false a la variable codeHasBeenCompiled. Esto indica que el código no ha sido compilado.
     }
 
     /**
