@@ -1,0 +1,11 @@
+<component name="libraryTable">
+  <library name="lib">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/dist/lib/flatlaf-2.2.jar!/" />
+      <root url="jar://$PROJECT_DIR$/dist/lib/compilerTools-2.3.7.jar!/" />
+      <root url="jar://$PROJECT_DIR$/dist/lib/jflex-full-1.8.2.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>
