@@ -628,7 +628,10 @@ public class Compilador extends javax.swing.JFrame {
         Este código llama al método `syntacticAnalysis()` que inicia el análisis sintáctico del código fuente. 
         Para ello, se crea una instancia de la clase `Grammar` pasándole como parámetros los tokens obtenidos durante el análisis léxico y 
         una lista vacía para almacenar los errores sintácticos encontrados. La clase `Grammar` se encarga de realizar el análisis sintáctico 
-        mediante la implementación de una gramática y genera los errores sintácticos correspondientes, si los hubiera.
+        mediante la implementación de una gramática y genera los errores sintácticos correspondientes, si los hubiera, ademas define reglas
+        para la operacion matematica, declaraciones de variables (int, float, bool, string) y manejo de errores sintácticos y semánticos
+        Las reglas de gramatica estan deinidas en el metodo "group" que recibe varios parámetros, como el nombre de la gramatica,
+        la combinacion de tokens y mensajes de error opcionales.
     */
 
     private void syntacticAnalysis() {
